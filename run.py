@@ -65,14 +65,14 @@ class Hangman:
         Checks to see if game is over
         """
         return self.hangman_won() or (len(self.missed_letters) == 6)
-		
+
     def hangman_won(self):
         """
         If all letters have been guessed, the game is won.
         """
         if '_' not in self.hide_word():
             return True
-        else:    
+        else:
             return False
 
     def hide_word(self):
@@ -120,6 +120,7 @@ def random_word():
     ]
     return words[random.randint(0, len(words)-1)]
 
+
 def main():
     """
     Start the game, and wait for player to
@@ -130,26 +131,25 @@ def main():
     while not game.hangman_over():
         game.show_game_status()
         user_input = input('\nEnter a letter: ')
-        if(user_input == "0"):
+        if user_input == "0":
             print(f'The word was {game.word}')
             print("bye!")
             return
-      
-        if((user_input>='a' and user_input<= 'z') or (user_input>='A' 
-            and user_input<='Z')):
+
+        if((user_input >= 'a' and user_input <= 'z')
+                or (user_input >= 'A' and user_input <= 'Z')):
             game.guess(user_input)
         else:
             print(user_input, '\nis not a valid letter')
-	
 
-    game.show_game_status()	
+    game.show_game_status()
     if game.hangman_won():
         print ('\nWell done! You win')
     else:
         print ('\nYou lost this game')
         print (f'The word was {game.word}')
-		
+
     print ('\nGoodbye!\n')
-		
+
 if __name__ == "__main__":
-	main()
+    main()
