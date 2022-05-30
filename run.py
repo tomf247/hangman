@@ -92,15 +92,15 @@ class Hangman:
         Prompts the player for a letter, validates it,
         and checks the game status.
         """
-        print (ASCII_ART[len(self.missed_letters)])
-        print ('Word: ' + self.hide_word())
-        print ('Letters Missed: ', )
+        print(ASCII_ART[len(self.missed_letters)])
+        print('Word: ' + self.hide_word())
+        print('Letters Missed: ', )
         for letter in self.missed_letters:
-            print (letter, )
+            print(letter, )
         print()
-        print ('Letters Guessed: ', )
+        print('Letters Guessed: ', )
         for letter in self.guessed_letters:
-            print (letter, )
+            print(letter, )
         print()
 
 
@@ -145,10 +145,10 @@ def main():
 
     game.show_game_status()
     if game.hangman_won():
-        print ('\nWell done! You win')
+        print('\nWell done! You win')
     else:
-        print ('\nYou lost this game')
-        print (f'The word was {game.word}')
+        print('\nYou lost this game')
+        print(f'The word was {game.word}')
 
     play_again = input('\nPlay again? "y" for Yes, or any other key to exit\n')
     if play_again == 'y' or play_again == 'Y':
@@ -156,5 +156,7 @@ def main():
     else:
         print('\nGoodbye!\n')
 
+
 if __name__ == "__main__":
     main()
+    
