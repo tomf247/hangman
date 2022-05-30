@@ -1,50 +1,42 @@
 import random
 
 
-ASCII_ART = [
-    '''
+ASCII_ART = ['''
     +---+
         |
         |
         |
-       ===''',
-    '''
+       ===''', '''
     +---+
     O   |
         |
         |
-       ===''',
-    '''
+       ===''', '''
     +---+
     O   |
     |   |
         |
-       ===''',
-    '''
+       ===''', '''
     +---+
     O   |
    /|   |
         |
-       ===''',
-    '''
+       ===''', '''
     +---+
     O   |
    /|\  |
         |
-       ===''',
-    '''
+       ===''', '''
     +---+
     O   |
    /|\  |
    /    |
-       ===''',
-    '''
+       ===''', '''
     +---+
     O   |
    /|\  |
    / \  |
-       ===''',
-    ]
+       ===''']
 
 
 class Hangman:
@@ -78,13 +70,17 @@ class Hangman:
             return False
 
     def hide_word(self):
-        rtn = ''
+        """
+        Determine if a guessed letter or a blank space displays
+        """
+
+        char_to_show = ''
         for letter in self.word:
             if letter not in self.guessed_letters:
-                rtn += '_'
+                char_to_show += '_'
             else:
-                rtn += letter
-        return rtn
+                char_to_show += letter
+        return char_to_show
 
     def show_game_status(self):
         """
@@ -125,23 +121,32 @@ def main():
     select a letter
     """
 
-game = Hangman(random_word())
-while True:
-    game.show_game_status()
-    user_input = input('\nEnter a letter: ')
-    if user_input == '0':
-        print('The word was ' + game_word)
-        print('bye!')
-        exit()
+    game = Hangman(random_word())
+    while True:
+        game.show_game_status()
+        user_input = input('\nEnter a letter: ')
+        if user_input == '0':
+            print('The word was ' + game.word)
+            print('bye!')
+            return
 
-    if user_input >= 'a' and user_input <= 'z' \
-       or user_input >= 'A' and user_input <= 'Z':
+        if user_input >= 'a' and user_input <= 'z' \
+        or user_input >= 'A' and user_input <= 'Z':
 
-        print(user_input, 'is a valid letter.')
-        print('you typed:', user_input)
+            print(user_input, 'is a valid letter.')
+            print('you typed:', user_input)
+        else:
+            print(user_input, 'is not a valid letter')
+
+
+    game.show_game_status()	
+    if game.hangman_won():
+        print ('\nWell done! You win.')
     else:
-        print(user_input, 'is not a valid letter')
-
+        print ('\You lost this game.')
+        print (f'The word was {self.word}')
+		
+    print ('\nGoodbye!\n')
 
 if __name__ == '__main__':
     main()
