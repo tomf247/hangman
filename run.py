@@ -127,29 +127,29 @@ def main():
     """
 
     game = Hangman(random_word())
-    while True:
+    while not game.hangman_over():
         game.show_game_status()
         user_input = input('\nEnter a letter: ')
-        if user_input == '0':
-            print('The word was ' + game.word)
-            print('bye!')
+        if(user_input == "0"):
+            print(f'The word was {game.word}')
+            print("bye!")
             return
-
-        if user_input >= 'a' and user_input <= 'z' \
-        or user_input >= 'A' and user_input <= 'Z':
+      
+        if((user_input>='a' and user_input<= 'z') or (user_input>='A' 
+            and user_input<='Z')):
             game.guess(user_input)
         else:
-            print(user_input, 'is not a valid letter')
-
+            print(user_input, '\nis not a valid letter')
+	
 
     game.show_game_status()	
     if game.hangman_won():
-        print ('\nWell done! You win.')
+        print ('\nWell done! You win')
     else:
-        print ('\You lost this game.')
-        print (f'The word was {self.word}')
+        print ('\nYou lost this game')
+        print (f'The word was {game.word}')
 		
     print ('\nGoodbye!\n')
-
-if __name__ == '__main__':
-    main()
+		
+if __name__ == "__main__":
+	main()
