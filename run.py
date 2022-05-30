@@ -150,7 +150,11 @@ def main():
         print ('\nYou lost this game')
         print (f'The word was {game.word}')
 
-    print ('\nGoodbye!\n')
+    play_again = input('\nPlay again? "y" for Yes, or any other key to exit')
+    if play_again == 'y' or play_again == 'Y':
+        main()
+    else:
+        print('\nGoodbye!\n')
 
 if __name__ == "__main__":
     main()
