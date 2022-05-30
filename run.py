@@ -82,7 +82,7 @@ class Hangman:
         char_to_show = ''
         for letter in self.word:
             if letter not in self.guessed_letters:
-                char_to_show += '_'
+                char_to_show += '-'
             else:
                 char_to_show += letter
         return char_to_show
