@@ -47,6 +47,30 @@ ASCII_ART = [
     ]
 
 
+class Hangman:
+    """
+    Initialize and set the game paramaters.
+    """
+    def __init__(self, word):
+        self.word = word
+        self.missed_letters = []
+        self.guessed_letters = []
+
+    def show_game_status(self):
+        """
+        Prompts the player for a letter, validates it,
+        and checks the game status.
+        """
+        print (ASCII_ART[len(self.missed_letters)])
+        print ('Letters Missed: ', )
+        for letter in self.missed_letters:
+            print (letter, )
+        print()
+        print ('Letters Guessed: ', )
+        for letter in self.guessed_letters:
+            print (letter, )
+        print()
+
 def random_word():
     """
     Selects a random word for the game
@@ -63,11 +87,15 @@ def random_word():
     ]
     return words[random.randint(0, len(words)-1)]
 
+def main():
+    """
+    Start the game, and wait for player to
+    select a letter
+    """
 
-game_word = random_word()
-
+game = Hangman(random_word())
 while True:
-
+    game.show_game_status()
     user_input = input('\nEnter a letter: ')
     if user_input == '0':
         print('The word was ' + game_word)
@@ -81,3 +109,7 @@ while True:
         print('you typed:', user_input)
     else:
         print(user_input, 'is not a valid letter')
+
+
+if __name__ == '__main__':
+    main()
