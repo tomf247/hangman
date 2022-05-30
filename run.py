@@ -94,7 +94,7 @@ class Hangman:
         """
         print(ASCII_ART[len(self.missed_letters)])
         print('\nWord: ' + self.hide_word() + '\n')
-        print(str(len(self.word)) + ' letters in play \n')
+        print(str(len(self.word)) + ' letters in play. You have 6 guesses. \n')
         print('Letters Missed: ', )
         for letter in self.missed_letters:
             print(letter, )
