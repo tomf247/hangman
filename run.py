@@ -56,12 +56,34 @@ class Hangman:
         self.missed_letters = []
         self.guessed_letters = []
 
+    def guess(self, letter):
+        """
+        Add the letter to the relevant list
+        """
+        if letter in self.word and letter not in self.guessed_letters:
+            self.guessed_letters.append(letter)
+        elif letter not in self.word and letter not in self.missed_letters:
+            self.missed_letters.append(letter)
+        else:
+            return False
+        return True
+
+    def hide_word(self):
+        rtn = ''
+        for letter in self.word:
+            if letter not in self.guessed_letters:
+                rtn += '_'
+            else:
+                rtn += letter
+        return rtn
+
     def show_game_status(self):
         """
         Prompts the player for a letter, validates it,
         and checks the game status.
         """
         print (ASCII_ART[len(self.missed_letters)])
+        print ('Word: ' + self.hide_word())
         print ('Letters Missed: ', )
         for letter in self.missed_letters:
             print (letter, )
@@ -70,6 +92,7 @@ class Hangman:
         for letter in self.guessed_letters:
             print (letter, )
         print()
+
 
 def random_word():
     """
