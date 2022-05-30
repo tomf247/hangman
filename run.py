@@ -127,6 +127,7 @@ def main():
     select a letter
     """
 
+    print('=== > H A N G M A N! <===')
     game = Hangman(random_word())
     while not game.hangman_over():
         game.show_game_status()
