@@ -68,6 +68,15 @@ class Hangman:
             return False
         return True
 
+    def hangman_over(self):
+        return self.hangman_won() or (len(self.missed_letters) == 6)
+		
+    def hangman_won(self):
+        if '_' not in self.hide_word():
+            return True
+        else:    
+            return False
+
     def hide_word(self):
         rtn = ''
         for letter in self.word:
