@@ -70,14 +70,14 @@ class Hangman:
         """
         If all letters have been guessed, the game is won.
         """
-        if '_' not in self.hide_word():
+        if '-' not in self.hide_word():
             return True
         else:
             return False
 
     def hide_word(self):
         """
-        Determine if a guessed letter or a blank space displays
+        Determine if a guessed letter or an underscore/hyphen displays
         """
         char_to_show = ''
         for letter in self.word:
