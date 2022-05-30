@@ -131,7 +131,7 @@ def main():
     game = Hangman(random_word())
     while not game.hangman_over():
         game.show_game_status()
-        user_input = input('\nEnter a letter, or "0" to quit: ')
+        user_input = input('\nEnter a letter, or "0" to quit: \n')
         if user_input == "0":
             print(f'The word was {game.word}')
             print("bye!")
@@ -150,7 +150,7 @@ def main():
         print ('\nYou lost this game')
         print (f'The word was {game.word}')
 
-    play_again = input('\nPlay again? "y" for Yes, or any other key to exit')
+    play_again = input('\nPlay again? "y" for Yes, or any other key to exit\n')
     if play_again == 'y' or play_again == 'Y':
         main()
     else:
