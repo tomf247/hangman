@@ -61,9 +61,15 @@ class Hangman:
         return True
 
     def hangman_over(self):
+        """
+        Checks to see if game is over
+        """
         return self.hangman_won() or (len(self.missed_letters) == 6)
 		
     def hangman_won(self):
+        """
+        If all letters have been guessed, the game is won.
+        """
         if '_' not in self.hide_word():
             return True
         else:    
@@ -73,7 +79,6 @@ class Hangman:
         """
         Determine if a guessed letter or a blank space displays
         """
-
         char_to_show = ''
         for letter in self.word:
             if letter not in self.guessed_letters:
@@ -132,9 +137,7 @@ def main():
 
         if user_input >= 'a' and user_input <= 'z' \
         or user_input >= 'A' and user_input <= 'Z':
-
-            print(user_input, 'is a valid letter.')
-            print('you typed:', user_input)
+        game.guess(user_input)
         else:
             print(user_input, 'is not a valid letter')
 
