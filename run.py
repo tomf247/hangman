@@ -93,7 +93,7 @@ class Hangman:
         and checks the game status.
         """
         print(ASCII_ART[len(self.missed_letters)])
-        print('Word: ' + self.hide_word())
+        print('Word: ' + self.hide_word() + '\n')
         print('Letters Missed: ', )
         for letter in self.missed_letters:
             print(letter, )
