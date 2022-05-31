@@ -1,5 +1,5 @@
 # Hangman
-[logo](https://github.com/tomf247/hangman/blob/073fa4407dbdf58e06946c171259d1204fe0776f/docs/screenshots/hangman-logo.jpg "Hangman Logo")
+[logo](https://github.com/tomf247/hangman/blob/073fa4407dbdf58e06946c171259d1204fe0776f/docs/screenshots/hangman_logo.jpg "Hangman Logo")
 
 Hangman is a Python terminal game, which will run anywhere a Pythpn command line interpreter is available.
 
