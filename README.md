@@ -1,7 +1,8 @@
 # Hangman
-[logo](https://github.com/tomf247/hangman/blob/073fa4407dbdf58e06946c171259d1204fe0776f/docs/screenshots/hangman_logo.jpg "Hangman Logo")
 
-Hangman is a Python terminal game, which will run anywhere a Pythpn command line interpreter is available.
+[logo](https://github.com/tomf247/hangman/blob/041172e7feacbf84e9efb6589abcca3f4a06eed0/docs/screenshots/hangman_logo.jpg "Hangman Logo")
+
+Hangman is a Python terminal game, which will run anywhere a Python command line interpreter is available.
 
 The object of the program is to guess the word the computer has selected, within the allowed number of guesses permitted.
 
@@ -37,6 +38,69 @@ At the end of each game the player has an option to play again, or quit the game
 
 - Only upper or lowercase letters from "a" to "z" permitted.
 - Any other keystroke is rejected.
+
+- Game state is maintained in a class structure.
+
+### Future Features
+
+- Load word list from a data file.
+- Two player game.
+- Further user interaction and feedback.
+
+## Data Model
+
+Two classes are used in the application. The Hangman class initializes the board and maintains game state, while the Main class solicits player interaction.
+
+Methods are used to update lists and counts.
+
+## Testing
+
+Testing included the following steps:
+
+- Passed the code though a Python linter and confirmed there were no issues.
+- Checked that only valid letters and not other characters are accepted.
+- Tested on both a local terminal promt and the Heroku terminal.
+
+## Bugs
+
+### Solved Bugs
+
+- The underscore character does not display in the Heroku CLI. This was a challenge
+as I relied on the number of underscores to show the length of the word being guessed. I fixed this by substituting the underscore with a hyphen character.
+
+- I had an "index-out-of-range" error when displaying the ASCII art. This was solved by subtracting 1 from the length of the array.
+
+### Remaining Bugs
+
+- No remaining bugs.
+
+## Validator Testing
+
+### PEP8
+
+- The code passes all tests at www.pep8online.com.
+
+## Deployment
+
+This app was deployed to Heroku using Code Institute's terminal emulator.
+
+### Steps for deployment
+
+- Fork or clone this repository
+- Create a new Heroku app
+- Set the buildbacks as `Python` and `NodeJS` in that order.
+- Link the Heroku app to the repository
+- Click on Deploy
+
+## Credits
+
+I referred to www.stackexchange.com frequently, both for syntax as well as design principles.
+The ASCII array used in the app was found on www.stackexchange.com and is in the public domain.
+I created my own version of the app, but studied code samples which influenced portions of the app.
+
+The client terminal is supplied by Code Institute.
+
+
 
 
 
