@@ -1,6 +1,6 @@
 # Hangman
 
-[logo](https://github.com/tomf247/hangman/blob/041172e7feacbf84e9efb6589abcca3f4a06eed0/docs/screenshots/hangman_logo.jpg "Hangman Logo")
+![alt text](https://github.com/tomf247/hangman/blob/041172e7feacbf84e9efb6589abcca3f4a06eed0/docs/screenshots/hangman_logo.jpg "Hangman Logo")
 
 Hangman is a Python terminal game, which will run anywhere a Python command line interpreter is available.
 
@@ -77,6 +77,8 @@ as I relied on the number of underscores to show the length of the word being gu
 ## Validator Testing
 
 ### PEP8
+
+![alt text](https://github.com/tomf247/hangman/blob/0226440e2cf7261eb821db0dafc810910c2eb1b0/docs/screenshots/hangman_pep8.png "pep8 passed")
 
 - The code passes all tests at www.pep8online.com.
 
