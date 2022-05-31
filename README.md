@@ -1,21 +1,31 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman
 
-Welcome tomf247,
+Hangman is a Python terminal game, which will run anywhere a Pythpn command line interpreter is available.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The object of the program is to guess the word the computer has selected, within the allowed number of guesses permitted.
 
-## Reminders
+[Here is a link to the application](https://tf-hangman.herokuapp.com/)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## How to play
 
-## Creating the Heroku app
+The game is based on the traditional game as described on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game)).
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+A hanging stick figure is progressively revealed for every incorrect guess. Only solving the correct word will prevent the figure from hanging.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+The player is allowed six incorrect guesses, after which the game is over. However if the player solves the secret word, a message is displayed showing the player has won.
+
+At the end of each game the player has an option to play again, or quit the game.
+
+## Features
+
+### Existing Features
+
+- Random Word Generator: The app selects a random word at the start. This word is not revealed until the game is over.
+- Accepts user guesses
+- Maintains list of correct guesses
+- Maintains list of incorrect guesses
+- Counts the number of guess attempts
+
 
 You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
