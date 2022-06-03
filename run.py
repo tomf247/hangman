@@ -137,8 +137,10 @@ def main():
             print("bye!")
             return
 
-        elif(user_input >= 'a' and user_input <= 'z') or \
-                (user_input >= 'A' and user_input <= 'Z'):
+        elif(user_input >= 'a' and user_input <= 'z' and
+                len(user_input) == 1) or \
+                (user_input >= 'A' and user_input <= 'Z' and
+                    len(user_input) == 1):
             game.guess(user_input)
         else:
             print(user_input, '\nis not a valid letter')
