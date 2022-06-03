@@ -70,7 +70,7 @@ class Hangman:
         """
         If all letters have been guessed, the game is won.
         """
-        if '-' not in self.hide_word():
+        if '_' not in self.hide_word():
             return True
         else:
             return False
@@ -82,7 +82,7 @@ class Hangman:
         char_to_show = ''
         for letter in self.word:
             if letter not in self.guessed_letters:
-                char_to_show += '-'
+                char_to_show += '_'
             else:
                 char_to_show += letter
         return char_to_show
