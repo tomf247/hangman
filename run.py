@@ -89,8 +89,7 @@ class Hangman:
 
     def show_game_status(self):
         """
-        Prompts the player for a letter, validates it,
-        and checks the game status.
+        Update ASCII art to reflect game state, and show score board counts
         """
         print(ASCII_ART[len(self.missed_letters)])
         print('\nWord: ' + self.hide_word() + '\n')
