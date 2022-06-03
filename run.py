@@ -94,7 +94,8 @@ class Hangman:
         """
         print(ASCII_ART[len(self.missed_letters)])
         print('\nWord: ' + self.hide_word() + '\n')
-        print(str(len(self.word)) + ' letters in play. You have 6 guesses. \n')
+        remaining_guesses = (6 - len(self.missed_letters))
+        print(str(remaining_guesses) + ' guesses left. \n')
         print('Letters Missed: ', )
         for letter in self.missed_letters:
             print(letter, )
@@ -143,7 +144,7 @@ def main():
                     len(user_input) == 1):
             game.guess(user_input)
         else:
-            print(user_input, '\nis not a valid letter')
+            print(f'{user_input} is not a valid letter')
 
     game.show_game_status()
     if game.hangman_won():
