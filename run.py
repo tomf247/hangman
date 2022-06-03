@@ -24,18 +24,18 @@ ASCII_ART = ['''
        ===''', '''
     +---+
     O   |
-   /|\  |
+   /|\\  |
         |
        ===''', '''
     +---+
     O   |
-   /|\  |
+   /|\\  |
    /    |
        ===''', '''
     +---+
     O   |
-   /|\  |
-   / \  |
+   /|\\  |
+   / \\  |
        ===''']
 
 
@@ -50,7 +50,7 @@ class Hangman:
 
     def guess(self, letter):
         """
-        Add the letter to the relevant list
+        Add the letter to the guessed or missed list
         """
         if letter in self.word and letter not in self.guessed_letters:
             self.guessed_letters.append(letter)
@@ -137,7 +137,7 @@ def main():
             print("bye!")
             return
 
-        if(user_input >= 'a' and user_input <= 'z') or \
+        elif(user_input >= 'a' and user_input <= 'z') or \
                 (user_input >= 'A' and user_input <= 'Z'):
             game.guess(user_input)
         else:
@@ -149,13 +149,8 @@ def main():
     else:
         print('\nYou lost this game')
         print(f'The word was {game.word}')
-
-    play_again = input('\nPlay again? "y" for Yes, or any other key to exit\n')
-    if play_again == 'y' or play_again == 'Y':
-        main()
-    else:
         print('\nGoodbye!\n')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
