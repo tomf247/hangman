@@ -47,7 +47,9 @@ At the end of each game the player has an option to play again, or quit the game
 - Two player game.
 - Further user interaction and feedback.
 
-## Data Model
+## Data Model & Flow
+
+![alt text](https://github.com/tomf247/hangman/blob/c2c78c5ad6083a0c5d6661c425ee4f484ed3c5b6/docs/screenshots/hangman_flowchart.png "Flowchart")
 
 Two classes are used in the application. The Hangman class initializes the board and maintains game state, while the Main class solicits player interaction.
 
@@ -66,9 +68,11 @@ Testing included the following steps:
 ### Solved Bugs
 
 - The underscore character does not display in the Heroku CLI. This was a challenge
-as I relied on the number of underscores to show the length of the word being guessed. I fixed this by substituting the underscore with a hyphen character.
+as I relied on the number of underscores to show the length of the word being guessed. I fixed this by substituting the underscore with a hyphen character. Further debugging showed the issue was local to my environment, and the underscore was reverted back.
 
 - I had an "index-out-of-range" error when displaying the ASCII art. This was solved by subtracting 1 from the length of the array.
+
+- The ASCII art used required escape characters to pass linting.
 
 ### Remaining Bugs
 
@@ -80,7 +84,7 @@ as I relied on the number of underscores to show the length of the word being gu
 
 ![alt text](https://github.com/tomf247/hangman/blob/0226440e2cf7261eb821db0dafc810910c2eb1b0/docs/screenshots/hangman_pep8.png "pep8 passed")
 
-- The code passes all tests at www.pep8online.com.
+- The code passes all tests at www.pep8online.com. However if that same code is placed into VS Code and pylint is run on it there will be linting errors. Following consultation with my mentor, I understood that pylint compatibility is the priority, so my code is now pylint compliant.
 
 ## Deployment
 
@@ -97,7 +101,8 @@ This app was deployed to Heroku using Code Institute's terminal emulator.
 ## Credits
 
 I referred to www.stackexchange.com frequently, both for syntax as well as design principles.
-The ASCII array used in the app was found on www.stackexchange.com and is in the public domain.
+The ASCII array used in the app was is in the public domain, though I modified it with escape characters to pass linting.
+
 I created my own version of the app, but studied code samples which influenced portions of the app.
 
 The client terminal is supplied by Code Institute.
